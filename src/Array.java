@@ -1,5 +1,5 @@
 import java.math.RoundingMode;
-import java.util.Arrays;
+import java.util.*;
 
 public class Array {
     double getSum(double[] arr) {
@@ -46,6 +46,38 @@ public class Array {
         }
 
         return reversedArray;
+    }
+
+    Set<Integer> removeDuplicates(Integer[] arr) {
+        var arrList = List.of(arr);
+
+        return new LinkedHashSet<Integer>(arrList);
+    }
+
+    Integer findSecondBiggestNumber(int[] arr) {
+        var biggest = Integer.MIN_VALUE;
+        var secondBiggest = Integer.MIN_VALUE;
+
+        for (int number : arr) {
+            if (number > biggest) {
+                biggest = number;
+            } else if (number > secondBiggest) {
+                secondBiggest = number;
+            }
+        }
+
+        return secondBiggest;
+    }
+
+    int sumOnlyPositiveNumber(int[] arr) {
+        var sum = 0;
+
+        for (int number : arr) {
+            if (number <= 0) continue;
+            sum += number;
+        }
+
+        return sum;
     }
 }
 
