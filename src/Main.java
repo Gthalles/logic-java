@@ -2,7 +2,7 @@
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 void main() {
     Array arrUtil = new Array();
-    Integer[] arr = {55, 44, 33, 22, 11, 55};
+    Integer[] arr = {55, 44, 33, 22, 11, 0};
 
     var sumResult = arrUtil.getSum(arr);
     IO.println("Sum array elements: " + sumResult);
@@ -24,5 +24,8 @@ void main() {
 
     var positiveOnlyNumbersSum = arrUtil.sumOnlyPositiveNumber(arr);
     IO.println("Only positive numbers sum: " + positiveOnlyNumbersSum);
+
+    var rotatedArr = arrUtil.rotateArray(arr, -2);
+    IO.println("Rotated array: " + Arrays.toString(rotatedArr));
 }
 

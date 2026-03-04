@@ -79,4 +79,22 @@ public class Array {
 
         return sum;
     }
+
+    Integer[] rotateArray(Integer[] arr, Integer positions) {
+        var rotatedArray = arr.clone();
+
+        if (positions > 0) {
+            for (int index = 0; index < arr.length; index++) {
+                var newPosition = (index + positions) % arr.length;
+                rotatedArray[newPosition] = arr[index];
+            }
+        } else if (positions < 0) {
+            for (int index = 0; index < arr.length; index++) {
+                var newPosition = (index + positions + arr.length) % arr.length;
+                IO.println("position " + newPosition);
+            }
+        }
+
+        return rotatedArray;
+    }
 }
