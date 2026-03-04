@@ -1,6 +1,4 @@
-// ==============================
-// DIA 1 – Arrays básicos
-// ==============================
+# Arrays básicos
 1. Soma de elementos do array.
 2. Encontrar o maior número (sem Math.max).
 3. Contar quantos números pares existem.
@@ -10,9 +8,7 @@
 7. Somar apenas números positivos de um array.
 8. Rotacionar um array k posições (ex: [1,2,3,4,5], k=2 → [4,5,1,2,3]).
 
-// ==============================
-// DIA 2 – Strings
-// ==============================
+# Strings
 1. Reverter string.
 2. Verificar se uma palavra é palíndromo.
 3. Contar vogais em uma string.
