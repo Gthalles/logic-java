@@ -1,7 +1,6 @@
-import java.math.RoundingMode;
 import java.util.*;
 
-public class Array {
+public class ArrayUtils {
     Integer getSum(Integer[] arr) {
         var sum = 0;
 

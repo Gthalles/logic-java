@@ -1,34 +1,47 @@
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 void main() {
-    Array arrUtil = new Array();
+    ArrayUtils arrUtils = new ArrayUtils();
     Integer[] arr = {55, 44, 33, 22, 11, 0};
 
-    var sumResult = arrUtil.getSum(arr);
+    var sumResult = arrUtils.getSum(arr);
     IO.println("Sum array elements: " + sumResult);
 
-    var biggestNumber = arrUtil.findBiggest(arr);
+    var biggestNumber = arrUtils.findBiggest(arr);
     IO.println("Biggest number in array: " + biggestNumber);
 
-    var evensCount = arrUtil.countEven(arr);
+    var evensCount = arrUtils.countEven(arr);
     IO.println("Occurrence of evens numbers: " + evensCount);
 
-    var reversedArray = arrUtil.reverseArr(arr);
+    var reversedArray = arrUtils.reverseArr(arr);
     IO.println("Reversed array: " + Arrays.toString(reversedArray));
 
-    var arrHashSet = arrUtil.removeDuplicates(arr);
+    var arrHashSet = arrUtils.removeDuplicates(arr);
     IO.println("Array of unique elements: " + arrHashSet);
 
-    var secondBiggestNumber = arrUtil.findSecondBiggestNumber(arr);
+    var secondBiggestNumber = arrUtils.findSecondBiggestNumber(arr);
     IO.println("Second biggest number in array: " + secondBiggestNumber);
 
-    var positiveOnlyNumbersSum = arrUtil.sumOnlyPositiveNumber(arr);
+    var positiveOnlyNumbersSum = arrUtils.sumOnlyPositiveNumber(arr);
     IO.println("Only positive numbers sum: " + positiveOnlyNumbersSum);
 
-    var leftRotatedArr = arrUtil.rotateArray(arr, -2);
+    var leftRotatedArr = arrUtils.rotateArray(arr, -2);
     IO.println("Rotated array two positions to left: " + Arrays.toString(leftRotatedArr));
 
-    var rightRotatedArr = arrUtil.rotateArray(arr, 2);
+    var rightRotatedArr = arrUtils.rotateArray(arr, 2);
     IO.println("Rotated array two positions to right: " + Arrays.toString(rightRotatedArr));
+
+    // Strings
+    String str = "Thalles";
+    StringUtils strUtils = new StringUtils();
+
+    var reversedStr = strUtils.reverseString(str);
+    IO.println("Reversed string: " + reversedStr);
+
+    var palindrome = strUtils.isPalindrome(str);
+    IO.println("Is palindrome: " + palindrome);
+
+    var vowelsCount = strUtils.countVowels(str);
+    IO.println("Vowels number is: " + vowelsCount);
 }
 
