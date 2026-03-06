@@ -43,5 +43,9 @@ void main() {
 
     var vowelsCount = strUtils.countVowels(str);
     IO.println("Vowels number is: " + vowelsCount);
+
+    var charFrequency = strUtils.getCharFrequency(str);
+    IO.println("Char frequency: " + charFrequency);
+
 }
 

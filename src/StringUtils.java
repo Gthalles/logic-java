@@ -1,6 +1,6 @@
-import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
+import java.util.LinkedHashMap;
 
 public class StringUtils {
     String reverseString(String str) {
@@ -33,5 +33,18 @@ public class StringUtils {
         }
 
         return count;
+    }
+
+    LinkedHashMap<Character, Integer> getCharFrequency(String str) {
+        var frequencyMap = new LinkedHashMap<Character, Integer>();
+
+        for (char element : str.toCharArray()) {
+            var currentFrequency = frequencyMap.get(element);
+
+            if (currentFrequency == null) frequencyMap.put(element, 1);
+            else frequencyMap.put(element, currentFrequency + 1);
+        }
+
+        return frequencyMap;
     }
 }
