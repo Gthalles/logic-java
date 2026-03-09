@@ -1,3 +1,6 @@
+# Estudos iniciais em Java
+Exercícios simples para praticar sintaxe em java.
+
 # Arrays básicos
 1. Soma de elementos do array.
 2. Encontrar o maior número (sem Math.max).
