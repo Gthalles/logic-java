@@ -3,6 +3,9 @@
 import java.util.Arrays;
 void main() {
     ArrayUtils arrUtils = new ArrayUtils();
+    StringUtils strUtils = new StringUtils();
+
+    String str = "Thalles Garbelotti";
     Integer[] arr = {55, 44, 33, 22, 11, 0};
 
     var sumResult = arrUtils.getSum(arr);
@@ -33,9 +36,6 @@ void main() {
     IO.println("Rotated array 2 positions to right (input: " + Arrays.toString(arr) + ") result: " + Arrays.toString(rightRotatedArr));
 
     // Strings
-    String str = "Thalles";
-    StringUtils strUtils = new StringUtils();
-
     var reversedStr = strUtils.reverseString(str);
     IO.println("Reversed string (input: \"" + str + "\") result: " + reversedStr);
 
@@ -53,4 +53,7 @@ void main() {
 
     var isAnagram = strUtils.isAnagram(str);
     IO.println("Is anagram? (input: \"" + str + "\") result: " + isAnagram);
+
+    var stringWithoutSpaces = strUtils.encodeString(str);
+    IO.println("Replace spaces with %20 (input: \"" + str + "\") result: " + stringWithoutSpaces);
 }

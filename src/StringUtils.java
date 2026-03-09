@@ -73,4 +73,17 @@ public class StringUtils {
 
         return Objects.equals(str, reversedString);
     }
+
+    String encodeString(String str) {
+        var result = "";
+
+        for (int i = 0; i < str.length(); i++) {
+            var letter = String.valueOf(str.charAt(i));
+            var letterIsSpace = letter.equals(" ");
+
+            result = result.concat(letterIsSpace ? "%20" : letter);
+        }
+
+        return result;
+    }
 }
