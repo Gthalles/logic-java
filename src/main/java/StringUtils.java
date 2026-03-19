@@ -5,7 +5,7 @@ public class StringUtils {
 
     public StringUtils(String str) {
         if (str == null || str.isEmpty()) {
-            throw new IllegalArgumentException("String must have characters");
+            throw new Error("String must have characters");
         }
 
         this.str = str;
@@ -33,7 +33,7 @@ public class StringUtils {
         var vowels = List.of("a", "e", "i", "o", "u");
 
         for (char element : str.toCharArray()) {
-            var letter = Objects.toString(element).toLowerCase();
+            var letter = Objects.toString(element);
 
             if (vowels.contains(letter)) {
                 count++;
@@ -43,15 +43,14 @@ public class StringUtils {
         return count;
     }
 
-    LinkedHashMap<String, Integer> getCharFrequency() {
-        var frequencyMap = new LinkedHashMap<String, Integer>();
+    LinkedHashMap<Character, Integer> getCharFrequency() {
+        var frequencyMap = new LinkedHashMap<Character, Integer>();
 
-        for (char letter : str.toCharArray()) {
-            var letterInLowerCase = String.valueOf(letter).toLowerCase();
-            var currentFrequency = frequencyMap.get(letterInLowerCase);
+        for (char element : str.toCharArray()) {
+            var currentFrequency = frequencyMap.get(element);
 
-            if (currentFrequency == null) frequencyMap.put(letterInLowerCase, 1);
-            else frequencyMap.put(letterInLowerCase, currentFrequency + 1);
+            if (currentFrequency == null) frequencyMap.put(element, 1);
+            else frequencyMap.put(element, currentFrequency + 1);
         }
 
         return frequencyMap;
@@ -62,7 +61,7 @@ public class StringUtils {
         var charFrequency = new HashMap<Character, Integer>();
 
         for (char element : str.toCharArray()) {
-            var convertedElement = String.valueOf(element).toLowerCase();
+            var convertedElement = String.valueOf(element);
 
             if (charFrequency.get(element) == null) {
                 charFrequency.put(element, 1);
@@ -71,6 +70,18 @@ public class StringUtils {
         }
 
         return result;
+    }
+
+    boolean isAnagram() {
+        var reversedString = "";
+        var startIndex = str.length() - 1;
+
+        for (int i = startIndex; i >= 0; i--) {
+            var letterString = String.valueOf(str.charAt(i));
+            reversedString = reversedString.concat(letterString);
+        }
+
+        return Objects.equals(str, reversedString);
     }
 
     String encodeString() {
@@ -110,6 +121,7 @@ public class StringUtils {
             }
         }
 
-        return  biggestSubstring;
+        return biggestSubstring;
     }
 }
+

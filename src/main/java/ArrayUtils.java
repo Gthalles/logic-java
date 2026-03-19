@@ -5,7 +5,7 @@ public class ArrayUtils {
 
     public ArrayUtils(Integer[] arr) {
         if (arr.length == 0) {
-            throw  new Error("IllegalArgumentException");
+            throw new Error("Array must elements");
         }
 
         this.arr = arr;
@@ -92,10 +92,10 @@ public class ArrayUtils {
     Integer[] rotateArray(Integer positions) {
         var rotatedArray = arr.clone();
 
-            for (int index = 0; index < arr.length; index++) {
-                var newPosition = (index + positions + arr.length) % arr.length;
-                rotatedArray[newPosition] = arr[index];
-            }
+        for (int index = 0; index < arr.length; index++) {
+            var newPosition = (index + positions + arr.length) % arr.length;
+            rotatedArray[newPosition] = arr[index];
+        }
 
         return rotatedArray;
     }
@@ -119,3 +119,4 @@ public class ArrayUtils {
         return maxSum;
     }
 }
+
