@@ -37,6 +37,7 @@ mvn exec:java
 6. Encontrar o segundo maior numero.
 7. Somar apenas numeros positivos de um array.
 8. Rotacionar um array `k` posicoes (ex: `[1,2,3,4,5]`, `k=2` -> `[4,5,1,2,3]`).
+9. Subarray com soma máxima (Kadane’s Algorithm).
 
 ### Strings
 
