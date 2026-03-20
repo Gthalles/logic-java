@@ -43,14 +43,16 @@ public class StringUtils {
         return count;
     }
 
-    LinkedHashMap<Character, Integer> getCharFrequency() {
-        var frequencyMap = new LinkedHashMap<Character, Integer>();
+    HashMap<String, Integer> getCharFrequency() {
+        var frequencyMap = new HashMap<String, Integer>();
 
         for (char element : str.toCharArray()) {
-            var currentFrequency = frequencyMap.get(element);
+            var letter = String.valueOf(element);
+            var letterInLowerCase = letter.toLowerCase();
+            var currentFrequency = frequencyMap.get(letterInLowerCase);
 
-            if (currentFrequency == null) frequencyMap.put(element, 1);
-            else frequencyMap.put(element, currentFrequency + 1);
+            if (currentFrequency == null) frequencyMap.put(letterInLowerCase, 1);
+            else frequencyMap.put(letterInLowerCase, currentFrequency + 1);
         }
 
         return frequencyMap;
@@ -72,16 +74,33 @@ public class StringUtils {
         return result;
     }
 
-    boolean isAnagram() {
-        var reversedString = "";
-        var startIndex = str.length() - 1;
+    boolean isAnagram(String comparedString) {
+        if (str.length() != comparedString.length()) return false;
 
-        for (int i = startIndex; i >= 0; i--) {
-            var letterString = String.valueOf(str.charAt(i));
-            reversedString = reversedString.concat(letterString);
+        var strCharFrequency = this.getCharFrequency();
+        var comparedCharFrequency = new HashMap<String, Integer>();
+
+        for (var letter : comparedString.toCharArray()) {
+            var letterInLowerCase = String.valueOf(letter).toLowerCase();
+            var letterFrequency = comparedCharFrequency.get(letterInLowerCase);
+
+            if (letterFrequency == null) {
+                comparedCharFrequency.put(letterInLowerCase, 1);
+            } else {
+                comparedCharFrequency.put(letterInLowerCase, letterFrequency + 1);
+            }
         }
 
-        return Objects.equals(str, reversedString);
+        for (var letter : str.toCharArray()) {
+            var letterInLowerCase = String.valueOf(letter).toLowerCase();
+            var currentStrCharFreq = strCharFrequency.get(letterInLowerCase);
+            var currentComparedCharFreq = comparedCharFrequency.get(letterInLowerCase);
+
+            if (currentStrCharFreq == null) return false;
+            if (currentStrCharFreq != currentComparedCharFreq) return false;
+        }
+
+        return true;
     }
 
     String encodeString() {

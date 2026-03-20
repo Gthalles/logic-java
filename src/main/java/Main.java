@@ -7,7 +7,7 @@ public class Main {
         Integer[] arr = {55, 44, 33, 22, 11, 0};
         ArrayUtils arrUtils = new ArrayUtils(arr);
 
-        String str = "thalles garbelotti";
+        String str = "Thalles Garbelotti";
         StringUtils strUtils = new StringUtils(str);
 
         System.out.println("Arrays Section");
@@ -61,7 +61,7 @@ public class Main {
         var strWithoutDuplicates = strUtils.removeDuplicates();
         printer.write("String without duplicates", strWithoutDuplicates);
 
-        var isAnagram = strUtils.isAnagram();
+        var isAnagram = strUtils.isAnagram("ittolebraG sellahT");
         printer.write("Is anagram?", isAnagram);
 
         var stringWithoutSpaces = strUtils.encodeString();
